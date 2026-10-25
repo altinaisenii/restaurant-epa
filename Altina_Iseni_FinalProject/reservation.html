@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | EPA Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+    <h1 class="logo">EPA Restaurant</h1>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="conloc.html">Contact</a></li>
+
+            <li class="dropdown">
+                <a href="#">Explore &#9662;</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- RESERVATION HERO SECTION -->
+<section class="hero reservation-hero">
+    <div class="hero-text">
+        <h4>Book Your Place</h4>
+        <h1>Make A Reservation</h1>
+
+        <p>
+            Reserve your table for family dinners, birthdays,
+            romantic evenings, and special celebrations.
+        </p>
+    </div>
+</section>
+
+<!-- RESERVATION FORM SECTION -->
+<section class="reserve">
+
+    <div class="audio-box">
+        <audio autoplay loop controls>
+            <source src="restaurantm.mp3" type="audio/mpeg">
+            <source src="restaurantm.mp3" type="audio/ogg">
+        </audio>
+    </div>
+
+    <div class="title">
+        <h2>Reserve A Table</h2>
+        <p>Fill in the form below and prepare for a comfortable dining experience.</p>
+    </div>
+
+    <div class="reserve-grid">
+
+        <!-- FORM -->
+        <form class="reserve-form" action="#" method="post" id="reservationForm">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+383 44 000 000" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Reservation Details</legend>
+
+                <label for="date">Reservation Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Reservation Time</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="guests">Number Of Guests</label>
+                <select id="guests" name="guests" required>
+                    <option value="">Choose number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7">7 Guests</option>
+                    <option value="8">8 Guests</option>
+                    <option value="more">More than 8 Guests</option>
+                </select>
+
+                <label for="occasion">Occasion</label>
+                <select id="occasion" name="occasion" required>
+                    <option value="">Choose occasion</option>
+                    <option value="family-dinner">Family Dinner</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="business-meeting">Business Meeting</option>
+                    <option value="romantic-dinner">Romantic Dinner</option>
+                    <option value="friends-night">Friends Night</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Table Preference</legend>
+
+                <div class="radio-box">
+                    <label class="radio-label" for="indoor">
+                        <input type="radio" id="indoor" name="table_area" value="indoor" required>
+                        Indoor
+                    </label>
+
+                    <label class="radio-label" for="outdoor">
+                        <input type="radio" id="outdoor" name="table_area" value="outdoor">
+                        Outdoor
+                    </label>
+
+                    <label class="radio-label" for="vip">
+                        <input type="radio" id="vip" name="table_area" value="vip">
+                        VIP Area
+                    </label>
+                </div>
+
+                <p class="small-title">Extra Services</p>
+
+                <div class="check-box">
+                    <label class="check-label" for="birthday-cake">
+                        <input type="checkbox" id="birthday-cake" name="extra_service" value="birthday-cake">
+                        Birthday Cake
+                    </label>
+
+                    <label class="check-label" for="flowers">
+                        <input type="checkbox" id="flowers" name="extra_service" value="flowers">
+                        Flowers
+                    </label>
+
+                    <label class="check-label" for="music">
+                        <input type="checkbox" id="music" name="extra_service" value="music">
+                        Live Music
+                    </label>
+
+                    <label class="check-label" for="decoration">
+                        <input type="checkbox" id="decoration" name="extra_service" value="decoration">
+                        Table Decoration
+                    </label>
+                </div>
+
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" placeholder="Write your special request here..." rows="5" cols="5"></textarea>
+            </fieldset>
+
+            <div class="form-buttons">
+                <input type="submit" value="Reserve Now">
+                <input type="reset" value="Clear Form">
+            </div>
+
+
+         
+
+        </form>
+
+      <p id="successMessage" class="reserve-form" style="display: none;">
+    Your reservation has been successfully submitted!
+</p>
+        <!-- OPENING HOURS ASIDE -->
+        <aside class="reserve-info">
+            <h3>Opening Hours</h3>
+
+            <div class="info-row">
+                <span>Monday - Friday</span>
+                <b>09:00 - 23:00</b>
+            </div>
+
+            <div class="info-row">
+                <span>Saturday</span>
+                <b>10:00 - 00:00</b>
+            </div>
+
+            <div class="info-row">
+                <span>Sunday</span>
+                <b>10:00 - 22:00</b>
+            </div>
+
+            <div class="info-row info-special">
+                <span>Online Reservations</span>
+                <b>24/7</b>
+            </div>
+
+            <hr>
+
+            <h3>Reservation Note</h3>
+
+            <p>
+                Please arrive 10 minutes before your reservation time.
+                For groups larger than 8 guests, we recommend calling us
+                before arrival.
+            </p>
+
+            <p>
+                Our team will prepare your table with care and make sure
+                your visit feels comfortable and special.
+            </p>
+        </aside>
+
+    </div>
+</section>
+
+<!-- BOTTOM NOTE SECTION -->
+<section class="reserve-note">
+    <h2>We Are Ready To Welcome You</h2>
+
+    <p>
+        Enjoy fresh dishes, elegant atmosphere, and professional service
+        at EPA Restaurant.
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 EPA Restaurant | Luxury Dining Experience</p>
+</footer>
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("reservationForm").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+    });
+</script>
+
+</body>
+</html>

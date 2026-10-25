@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | EPA Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* GALLERY HERO */
+
+        .gallery-hero {
+            min-height: 62vh;
+        }
+
+        /* GALLERY LINKS SECTION */
+
+        .gallery-links-section {
+            position: relative;
+            padding: 85px 20px 45px;
+            background-color: #0b1120;
+        }
+
+        /* AUDIO */
+
+        .gallery-links-section .audio-box {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            z-index: 10;
+        }
+
+        .gallery-links-section .audio-box audio {
+            width: 250px;
+            opacity: .9;
+            border-radius: 25px;
+        }
+
+        /* CATEGORY LINKS */
+
+        .gallery-links {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .gallery-links a {
+            color: #111827;
+            background-color: #f59e0b;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .gallery-links a:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        /* GALLERY SECTIONS */
+
+        .gallery-section {
+            padding: 90px 20px;
+            background-color: #111827;
+        }
+
+        .dark {
+            background-color: #0b1120;
+        }
+
+        /* INTERIOR MOSAIC GRID */
+
+        .mosaic-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            grid-template-rows: 250px 250px;
+            grid-template-areas:
+                "main dining"
+                "main luxury";
+            gap: 24px;
+        }
+
+        .main-photo {
+            grid-area: main;
+        }
+
+        .dining-photo {
+            grid-area: dining;
+        }
+
+        .luxury-photo {
+            grid-area: luxury;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid #374151;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+        }
+
+        .gallery-item img,
+        .photo-card img,
+        .dessert-grid img,
+        .event-photos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 22px;
+            background-color: rgba(11,17,32,.82);
+        }
+
+        .caption h3 {
+            color: #fbbf24;
+            margin: 0 0 8px;
+        }
+
+        .caption p {
+            color: #e5e7eb;
+            margin: 0;
+        }
+
+        .gallery-item:hover img,
+        .photo-card:hover img,
+        .dessert-main:hover img,
+        .dessert-small:hover img,
+        .event-photos img:hover {
+            transform: scale(1.06);
+            opacity: .88;
+        }
+
+        /* FOOD PHOTO WALL */
+
+        .photo-wall {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .photo-card {
+            height: 330px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid #374151;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.38);
+        }
+
+        .photo-card h3 {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            color: #fbbf24;
+            background-color: rgba(11,17,32,.82);
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin: 0;
+        }
+
+        /* DESSERT GRID */
+
+        .dessert-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            grid-template-rows: 230px 230px;
+            grid-template-areas:
+                "cake text text"
+                "cake cheese tiramisu";
+            gap: 24px;
+        }
+
+        .dessert-main {
+            grid-area: cake;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 2px solid #f59e0b;
+        }
+
+        .dessert-text {
+            grid-area: text;
+            background-color: #1f2937;
+            border-radius: 20px;
+            padding: 35px;
+            border-left: 5px solid #f59e0b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .dessert-text h3 {
+            color: #fbbf24;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .dessert-text p {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .dessert-text a,
+        .bottom-note a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 14px 32px;
+            margin: 8px;
+            border-radius: 35px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .dessert-text a {
+            width: 180px;
+            text-align: center;
+        }
+
+        .cheese-photo {
+            grid-area: cheese;
+        }
+
+        .tiramisu-photo {
+            grid-area: tiramisu;
+        }
+
+        .dessert-small {
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid #374151;
+        }
+
+        /* EVENT PHOTOS */
+
+        .event-photos {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .event-photos img {
+            height: 260px;
+            border-radius: 18px;
+            border: 1px solid #374151;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.38);
+        }
+
+        /* BOTTOM NOTE */
+
+        .bottom-note {
+            padding: 85px 20px;
+            text-align: center;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.7), rgba(17,24,39,0.9)),
+                url("background2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .bottom-note h2 {
+            color: #fbbf24;
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .bottom-note p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+            color: #e5e7eb;
+            line-height: 1.8;
+        }
+
+        /* GALLERY RESPONSIVE */
+
+        @media screen and (max-width: 760px) {
+
+            .gallery-hero,
+            .bottom-note {
+                background-attachment: scroll;
+            }
+
+            .gallery-links-section .audio-box {
+                position: static;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .gallery-links-section .audio-box audio {
+                width: 220px;
+            }
+
+            .mosaic-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "main"
+                    "dining"
+                    "luxury";
+            }
+
+            .dessert-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "cake"
+                    "text"
+                    "cheese"
+                    "tiramisu";
+            }
+
+            .photo-wall,
+            .event-photos {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item,
+            .dessert-main,
+            .dessert-small {
+                height: 260px;
+            }
+
+            .photo-card,
+            .event-photos img {
+                height: 260px;
+            }
+
+            .bottom-note h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+    <h1 class="logo">EPA Restaurant</h1>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="conloc.html">Contact</a></li>
+
+            <li class="dropdown">
+                <a href="#">Explore &#9662;</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- GALLERY HERO SECTION -->
+<section class="hero gallery-hero">
+    <div class="hero-text">
+        <h4>Moments And Flavors</h4>
+        <h1>EPA Gallery</h1>
+
+        <p>
+            A look inside our food, atmosphere, desserts,
+            and special restaurant moments.
+        </p>
+    </div>
+</section>
+
+<!-- GALLERY LINKS SECTION -->
+<section class="gallery-links-section">
+    <div class="audio-box" style="display:none;">
+        <audio autoplay loop controls>
+            <source src="restaurant_noise.mp3" type="audio/mpeg">
+            <source src="restaurant_noise.mp3" type="audio/ogg">
+        </audio>
+    </div>
+
+    <div class="gallery-links">
+        <a href="#interior">Interior</a>
+        <a href="#food">Food</a>
+        <a href="#desserts">Desserts</a>
+        <a href="#events">Events</a>
+    </div>
+</section>
+
+<!-- INTERIOR SECTION -->
+<section id="interior" class="gallery-section">
+    <div class="title">
+        <h2>Restaurant Interior</h2>
+        <p>Elegant spaces created for comfort, dinner, and celebration.</p>
+    </div>
+
+    <div class="mosaic-grid">
+
+        <div class="gallery-item main-photo">
+            <img src="interior/interior.jpg" alt="Restaurant Interior" width="650" height="520">
+
+            <div class="caption">
+                <h3>Main Hall</h3>
+                <p>Warm lights and elegant tables.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item dining-photo">
+            <img src="interior/dinning.jpg" alt="Dining Area" width="450" height="250">
+
+            <div class="caption">
+                <h3>Dining Area</h3>
+                <p>Perfect for family dinners.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item luxury-photo">
+            <img src="interior/luxury.jpg" alt="Luxury Table" width="450" height="250">
+
+            <div class="caption">
+                <h3>Luxury Table</h3>
+                <p>Prepared with care.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOD GALLERY SECTION -->
+<section id="food" class="gallery-section dark">
+    <div class="title">
+        <h2>Food Gallery</h2>
+        <p>Fresh dishes with premium taste and beautiful presentation.</p>
+    </div>
+
+    <div class="photo-wall">
+
+        <div class="photo-card">
+            <img src="food_gallery/pizza.jpg" alt="Pizza" width="280" height="330">
+            <h3>Luxury Pizza</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="food_gallery/pasta.jpg" alt="Pasta" width="280" height="330">
+            <h3>Creamy Pasta</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="food_gallery/steak.jpg" alt="Steak" width="280" height="330">
+            <h3>Grilled Steak</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="food_gallery/chicken.jpg" alt="Chicken" width="280" height="330">
+            <h3>Crispy Chicken</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- DESSERTS SECTION -->
+<section id="desserts" class="gallery-section">
+    <div class="title">
+        <h2>Dessert Moments</h2>
+        <p>Sweet details that make every visit more special.</p>
+    </div>
+
+    <div class="dessert-grid">
+
+        <div class="dessert-main">
+            <img src="choco_gallery/chocolate.jpg" alt="Chocolate Cake" width="450" height="460">
+        </div>
+
+        <div class="dessert-text">
+            <h3>Fresh Desserts Every Day</h3>
+
+            <p>
+                Our desserts are prepared with soft cream, fresh fruit,
+                chocolate, and careful decoration for unforgettable moments.
+            </p>
+
+            <a href="menu.html" class="btn-main">View Menu</a>
+        </div>
+
+        <div class="dessert-small cheese-photo">
+            <img src="choco_gallery/cheesecake.jpg" alt="Cheesecake" width="330" height="230">
+        </div>
+
+        <div class="dessert-small tiramisu-photo">
+            <img src="choco_gallery/tiramisu.webp" alt="Tiramisu" width="330" height="230">
+        </div>
+
+    </div>
+</section>
+
+<!-- EVENT GALLERY SECTION -->
+<section id="events" class="gallery-section dark">
+    <div class="title">
+        <h2>Event Gallery</h2>
+        <p>Beautiful memories from celebrations and special nights.</p>
+    </div>
+
+    <div class="event-photos">
+        <img src="event_gallery/birthday.webp" alt="Birthday Event" width="260" height="260">
+        <img src="event_gallery/family.jpg" alt="Family Dinner" width="260" height="260">
+        <img src="event_gallery/bussiness.jpg" alt="Business Dinner" width="260" height="260">
+        <img src="event_gallery/romantic.jpg" alt="Romantic Dinner" width="260" height="260">
+    </div>
+</section>
+
+<!-- BOTTOM NOTE SECTION -->
+<section class="bottom-note">
+    <h2>Create Your Own Memory</h2>
+
+    <p>
+        Visit EPA Restaurant and enjoy moments worth remembering.
+    </p>
+
+    <a href="reservation.html" class="btn-main">Book A Table</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 EPA Restaurant | Luxury Dining Experience</p>
+</footer>
+
+</body>
+</html>

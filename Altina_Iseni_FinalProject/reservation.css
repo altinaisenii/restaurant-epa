@@ -1,0 +1,350 @@
+.reservation-hero {
+    min-height: 60vh;
+}
+
+.reservation-hero .hero-text h1 {
+    font-size: 64px;
+}
+
+.reservation-hero .hero-text p {
+    font-size: 19px;
+}
+
+/* RESERVATION SECTION */
+
+.reserve {
+    position: relative;
+    padding: 90px 20px;
+    background-color: #111827;
+}
+
+/* AUDIO */
+
+.reserve .audio-box {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    z-index: 10;
+}
+
+.reserve .audio-box audio {
+    width: 250px;
+    opacity: .9;
+    border-radius: 25px;
+}
+
+/* RESERVATION GRID */
+
+.reserve-grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(300px, 1.4fr) minmax(260px, .8fr);
+    gap: 38px;
+    align-items: start;
+}
+
+/* FORM */
+
+.reserve-form {
+    background-color: #1f2937;
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #374151;
+    border-top: 4px solid #f59e0b;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+}
+
+fieldset {
+    border: 1px solid #374151;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #111827;
+}
+
+legend {
+    color: #fbbf24;
+    font-weight: bold;
+    padding: 0 10px;
+    letter-spacing: .05em;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    color: #e5e7eb;
+    font-weight: bold;
+}
+
+/* FORM INPUTS */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background-color: #f9fafb;
+    color: #111827;
+    font-family: Verdana, sans-serif;
+    transition: .3s;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 8px rgba(245,158,11,0.6);
+}
+
+input[type="radio"],
+input[type="checkbox"],
+select,
+input[type="submit"],
+input[type="reset"] {
+    cursor: pointer;
+}
+
+/* RADIO AND CHECKBOX OPTIONS */
+
+.radio-box,
+.check-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 12px 0 18px;
+}
+
+.radio-label,
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    font-weight: normal;
+    color: #d1d5db;
+    background-color: #1f2937;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #374151;
+    transition: .3s;
+}
+
+.radio-label:hover,
+.check-label:hover {
+    background-color: #273449;
+    border-color: #f59e0b;
+}
+
+.small-title {
+    color: #fbbf24;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* FORM BUTTONS */
+
+.form-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 13px 28px;
+    margin: 8px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+input[type="submit"] {
+    background-color: #f59e0b;
+    color: #111827;
+    border: 2px solid #f59e0b;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+input[type="reset"] {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #f59e0b;
+}
+
+input[type="reset"]:hover {
+    background-color: #f59e0b;
+    color: #111827;
+    transform: scale(1.05);
+}
+
+/* SIDE INFORMATION */
+
+.reserve-info {
+    background-color: #1f2937;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #374151;
+    border-top: 4px solid #f59e0b;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+    transition: .3s;
+}
+
+.reserve-info:hover {
+    transform: translateY(-8px);
+    border-color: #f59e0b;
+}
+
+.reserve-info h3 {
+    color: #fbbf24;
+    text-align: center;
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #374151;
+    color: #e5e7eb;
+}
+
+.info-row span {
+    color: #d1d5db;
+}
+
+.info-row b {
+    color: #fbbf24;
+}
+
+.info-special {
+    background-color: #111827;
+    border-bottom: none;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    border-left: 4px solid #f59e0b;
+}
+
+.reserve-info p {
+    color: #d1d5db;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #374151;
+    margin: 25px 0;
+}
+
+/* BOTTOM NOTE */
+
+.reserve-note {
+    padding: 80px 20px;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.7), rgba(17,24,39,0.9)),
+        url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.reserve-note h2 {
+    color: #fbbf24;
+    font-size: 42px;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 8px black;
+}
+
+.reserve-note p {
+    max-width: 720px;
+    margin: auto;
+    color: #e5e7eb;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 760px) {
+
+    .reservation-hero {
+        min-height: 55vh;
+    }
+
+    .reservation-hero .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .reservation-hero .hero-text p {
+        font-size: 16px;
+    }
+
+    .reserve .audio-box {
+        position: static;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .reserve .audio-box audio {
+        width: 220px;
+    }
+
+    .reserve-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reserve-form,
+    .reserve-info {
+        padding: 24px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    .radio-box,
+    .check-box {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        display: block;
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    .reserve-note {
+        background-attachment: scroll;
+    }
+
+    .reserve-note h2 {
+        font-size: 34px;
+    }
+}

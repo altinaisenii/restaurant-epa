@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | EPA Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* EVENTS HERO */
+
+        .events-hero {
+            min-height: 62vh;
+        }
+
+        .dark {
+            background-color: #0b1120;
+        }
+
+        /* EVENT TYPES SECTION */
+
+        .event-types {
+            position: relative;
+            padding: 90px 20px;
+            background-color: #111827;
+        }
+
+        /* AUDIO */
+
+        .event-types .audio-box {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            z-index: 10;
+        }
+
+        .event-types .audio-box audio {
+            width: 250px;
+            opacity: .9;
+            border-radius: 25px;
+        }
+
+        .event-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .event-box {
+            background-color: #1f2937;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #374151;
+            border-bottom: 5px solid #f59e0b;
+            transition: .3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        }
+
+        .event-box:hover {
+            transform: translateY(-10px);
+            background-color: #273449;
+            border-color: #f59e0b;
+        }
+
+        .event-box h3 {
+            color: #fbbf24;
+        }
+
+        .event-box p {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        /* EVENT PACKAGES SECTION */
+
+        .packages {
+            padding: 90px 20px;
+        }
+
+        .package-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .package-card {
+            background-color: #1f2937;
+            padding: 34px;
+            border-radius: 20px;
+            border: 1px solid #374151;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.42);
+            transition: .3s;
+        }
+
+        .featured {
+            border: 2px solid #f59e0b;
+            transform: scale(1.03);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            background-color: #273449;
+        }
+
+        .featured:hover {
+            transform: scale(1.03) translateY(-10px);
+        }
+
+        .package-card h3 {
+            color: #fbbf24;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .package-card h4 {
+            color: #f59e0b;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .package-card ul {
+            list-style-position: inside;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .package-card li {
+            color: #e5e7eb;
+            background-color: #111827;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .small-btn {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            background-color: #f59e0b;
+            color: #111827;
+            border: 2px solid #f59e0b;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .small-btn:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        /* EVENT TIMELINE SECTION */
+
+        .timeline {
+            padding: 90px 20px;
+            background-color: #111827;
+        }
+
+        .timeline-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .timeline-step {
+            background-color: #1f2937;
+            padding: 28px;
+            border-radius: 18px;
+            border-top: 4px solid #f59e0b;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .timeline-step:hover {
+            transform: translateY(-10px);
+            background-color: #273449;
+        }
+
+        .timeline-step span {
+            display: inline-block;
+            color: #111827;
+            background-color: #f59e0b;
+            padding: 12px 15px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .timeline-step h3 {
+            color: #fbbf24;
+        }
+
+        .timeline-step p {
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+
+        /* EVENT MOMENTS SECTION */
+
+        .moments {
+            padding: 90px 20px;
+        }
+
+        .moment-grid {
+            max-width: 1120px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .moment-card {
+            background-color: #1f2937;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #374151;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.38);
+            transition: .3s;
+        }
+
+        .moment-card:hover {
+            transform: translateY(-10px);
+            border-color: #f59e0b;
+        }
+
+        .moment-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+        .moment-card:hover img {
+            transform: scale(1.06);
+            opacity: .88;
+        }
+
+        .moment-card h3 {
+            color: #fbbf24;
+            text-align: center;
+            padding: 18px;
+            margin: 0;
+        }
+
+        /* BOTTOM NOTE */
+
+        .bottom-note {
+            padding: 85px 20px;
+            text-align: center;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.7), rgba(17,24,39,0.9)),
+                url("background2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .bottom-note h2 {
+            color: #fbbf24;
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .bottom-note p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+            color: #e5e7eb;
+            line-height: 1.8;
+        }
+
+        .bottom-note a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 14px 32px;
+            margin: 8px;
+            border-radius: 35px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        /* EVENTS RESPONSIVE */
+
+        @media screen and (max-width: 760px) {
+
+            .events-hero,
+            .bottom-note {
+                background-attachment: scroll;
+            }
+
+            .event-types .audio-box {
+                position: static;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .event-types .audio-box audio {
+                width: 220px;
+            }
+
+            .event-grid,
+            .package-grid,
+            .timeline-grid,
+            .moment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                transform: none;
+            }
+
+            .featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .bottom-note h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+    <h1 class="logo">EPA Restaurant</h1>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="conloc.html">Contact</a></li>
+
+            <li class="dropdown">
+                <a href="#">Explore &#9662;</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- EVENTS HERO SECTION -->
+<section class="hero events-hero">
+    <div class="hero-text">
+        <h4>Celebrate With Us</h4>
+        <h1>Events At EPA</h1>
+
+        <p>
+            Celebrate birthdays, family dinners, business meetings,
+            and romantic evenings in an elegant atmosphere.
+        </p>
+    </div>
+</section>
+
+<!-- EVENT TYPES SECTION -->
+<section class="event-types">
+    <div class="audio-box" style="display: none;">
+        <audio autoplay loop controls>
+            <source src="restaurant_noise.mp3" type="audio/mpeg">
+            <source src="restaurant_noise.mp3" type="audio/ogg">
+        </audio>
+    </div>
+
+    <div class="title">
+        <h2>Event Types</h2>
+        <p>Choose the perfect style for your special moment.</p>
+    </div>
+
+    <div class="event-grid">
+
+        <div class="event-box">
+            <h3>Birthday Parties</h3>
+            <p>Celebrate your birthday with food, music, and warm service.</p>
+        </div>
+
+        <div class="event-box">
+            <h3>Family Dinners</h3>
+            <p>A comfortable place for family meals and special memories.</p>
+        </div>
+
+        <div class="event-box">
+            <h3>Business Meetings</h3>
+            <p>Elegant tables and calm atmosphere for professional dinners.</p>
+        </div>
+
+        <div class="event-box">
+            <h3>Romantic Dinners</h3>
+            <p>Soft lights, beautiful tables, and a cozy dining experience.</p>
+        </div>
+
+        <div class="event-box">
+            <h3>Graduation Parties</h3>
+            <p>Celebrate success with friends, family, and delicious dishes.</p>
+        </div>
+
+        <div class="event-box">
+            <h3>Holiday Events</h3>
+            <p>Enjoy festive meals and warm gatherings during special days.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- EVENT PACKAGES SECTION -->
+<section class="packages dark">
+    <div class="title">
+        <h2>Event Packages</h2>
+        <p>Simple packages for different celebrations and group sizes.</p>
+    </div>
+
+    <div class="package-grid">
+
+        <div class="package-card">
+            <h3>Silver Package</h3>
+            <h4>19 EUR / person</h4>
+
+            <ul>
+                <li>Starter plate</li>
+                <li>Main dish</li>
+                <li>One soft drink</li>
+                <li>Basic table setup</li>
+            </ul>
+
+            <a href="reservation.html" class="small-btn">Reserve</a>
+        </div>
+
+        <div class="package-card featured">
+            <h3>Gold Package</h3>
+            <h4>29 EUR / person</h4>
+
+            <ul>
+                <li>Starter plate</li>
+                <li>Main dish and dessert</li>
+                <li>Two drinks</li>
+                <li>Table decoration</li>
+            </ul>
+
+            <a href="reservation.html" class="small-btn">Reserve</a>
+        </div>
+
+        <div class="package-card">
+            <h3>Premium Package</h3>
+            <h4>39 EUR / person</h4>
+
+            <ul>
+                <li>Full dinner menu</li>
+                <li>Dessert table</li>
+                <li>Special decoration</li>
+                <li>VIP table area</li>
+            </ul>
+
+            <a href="reservation.html" class="small-btn">Reserve</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- EVENT PLANNING TIMELINE SECTION -->
+<section class="timeline">
+    <div class="title">
+        <h2>How To Plan Your Event</h2>
+        <p>Four simple steps to organize your celebration.</p>
+    </div>
+
+    <div class="timeline-grid">
+
+        <div class="timeline-step">
+            <span>01</span>
+            <h3>Choose Event</h3>
+            <p>Select birthday, dinner, meeting, or another event type.</p>
+        </div>
+
+        <div class="timeline-step">
+            <span>02</span>
+            <h3>Select Date</h3>
+            <p>Choose your preferred date, time, and number of guests.</p>
+        </div>
+
+        <div class="timeline-step">
+            <span>03</span>
+            <h3>Confirm Menu</h3>
+            <p>Pick dishes, drinks, desserts, and special decorations.</p>
+        </div>
+
+        <div class="timeline-step">
+            <span>04</span>
+            <h3>Enjoy Event</h3>
+            <p>Arrive at EPA Restaurant and enjoy your celebration.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- EVENT MOMENTS SECTION -->
+<section class="moments dark">
+    <div class="title">
+        <h2>Event Moments</h2>
+        <p>A small look at celebrations inside EPA Restaurant.</p>
+    </div>
+
+    <div class="moment-grid">
+
+        <div class="moment-card">
+            <img src="event/brithday.avif" alt="Birthday Celebration" width="360" height="240">
+            <h3>Birthday Celebration</h3>
+        </div>
+
+        <div class="moment-card">
+            <img src="event/family.webp" alt="Family Event" width="360" height="240">
+            <h3>Family Event</h3>
+        </div>
+
+        <div class="moment-card">
+            <img src="event/dinner.jpg" alt="Dinner Night" width="360" height="240">
+            <h3>Dinner Night</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOTTOM NOTE SECTION -->
+<section class="bottom-note">
+    <h2>Plan Your Event With Us</h2>
+
+    <p>
+        Contact EPA Restaurant and let us help you create a beautiful event.
+    </p>
+
+    <a href="conloc.html" class="btn-main">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 EPA Restaurant | Luxury Dining Experience</p>
+</footer>
+
+</body>
+</html>

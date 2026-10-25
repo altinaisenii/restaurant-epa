@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | EPA Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+    <h1 class="logo">EPA Restaurant</h1>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="conloc.html">Contact</a></li>
+
+            <li class="dropdown">
+                <a href="#">Explore &#9662;</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- CONTACT HERO SECTION -->
+<section class="hero contact-hero">
+    <div class="hero-text">
+        <h4>Get In Touch</h4>
+        <h1>Contact EPA Restaurant</h1>
+
+        <p>
+            We are here to help you with questions, events,
+            special requests, and restaurant information.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT INFORMATION SECTION -->
+<section class="contact-info">
+
+    <div class="audio-box">
+        <audio autoplay loop controls>
+            <source src="restaurantm.mp3" type="audio/mpeg">
+            <source src="restaurantm.mp3" type="audio/ogg">
+        </audio>
+    </div>
+
+    <div class="info-panel">
+
+        <div class="info-text">
+            <h2>Contact Information</h2>
+
+            <p>
+                Whether you have a question, need event information,
+                or want to contact our team, we are always happy to help.
+            </p>
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-line">
+                <span>Location</span>
+                <p>123 Main Street, Skopje</p>
+            </div>
+
+            <div class="info-line">
+                <span>Call Us</span>
+                <p>
+                    <a href="tel:+38944111222">+389 44 111 222</a>
+                </p>
+            </div>
+
+            <div class="info-line">
+                <span>Email</span>
+                <p>
+                    <a href="mailto:info@eparestaurant.com">info@eparestaurant.com</a>
+                </p>
+            </div>
+
+            <div class="info-line">
+                <span>Open Every Day</span>
+                <p>09:00 - 23:00</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT FORM AND MAP SECTION -->
+<section class="contact-main">
+    <div class="contact-grid">
+
+        <!-- CONTACT FORM -->
+        <div class="form-box">
+            <h2>Send Us A Message</h2>
+
+            <form action="mailto:info@eparestaurant.com" method="post" id="contactForm">
+
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Choose a subject</option>
+                    <option value="general-question">General Question</option>
+                    <option value="event-information">Event Information</option>
+                    <option value="menu-question">Menu Question</option>
+                    <option value="reservation-help">Reservation Help</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+                <div class="form-buttons">
+                    <input type="submit" value="Send Message">
+                    <input type="reset" value="Clear Form">
+                </div>
+
+            </form>
+            <p id="contactSuccessMessage" class="form-box" style="display: none;">
+    Your message has been successfully sent!</p>
+        </div>
+
+        <!-- MAP AND SOCIAL LINKS -->
+        <div class="map-box">
+            <h2>Find Us Here</h2>
+
+            <p>
+                Visit EPA Restaurant and enjoy a warm atmosphere,
+                fresh food, and professional service.
+            </p>
+
+            <iframe
+                src="https://www.google.com/maps?q=Skopje&output=embed"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+
+            <div class="social-box">
+                <h3>Follow Us</h3>
+
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RESERVATION NOTE SECTION -->
+<section class="contact-note">
+    <h2>Need A Table?</h2>
+
+    <p>
+        For table booking, please visit our Reservation page
+        or call us directly.
+    </p>
+
+    <a href="reservation.html" class="btn-main">Go To Reservation</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 EPA Restaurant | Luxury Dining Experience</p>
+</footer>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("contactSuccessMessage").style.display = "block";
+    });
+</script>
+</body>
+</html>
